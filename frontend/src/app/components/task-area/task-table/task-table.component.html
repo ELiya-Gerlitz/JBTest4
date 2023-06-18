@@ -1,3 +1,28 @@
 <p>task-table works!</p>
+<div>
+    <table *ngIf="tasks?.length">
+        <thead>
+            <tr>
+                <th>description</th>
+                <th>Date & Time created</th>
+                <th>customerName</th>
+                <th>created</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tasks">
+                <!-- <td>{{p.theater.name}}</td> -->
+                <td>{{t.description}}</td>
+                <td>{{t.dateCreated | date:"dd/MM/yyyy HH:mm"}}</td>
+                <td>{{t.name }} </td>
+                <td>{{t.created }} </td>
+                <!-- <td>
+                    <button (click)="deleteMe(p.productId)"></button>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+
+</div>
 
 

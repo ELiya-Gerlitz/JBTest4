@@ -10,6 +10,9 @@ import { LayoutComponent } from './components/layout-area/layout/layout.componen
 import { PageNotFoundComponent } from './components/layout-area/page-not-found/page-not-found.component';
 import { TaskTableComponent } from './components/task-area/task-table/task-table.component';
 import { TaskAddComponent } from './components/task-area/task-add/task-add.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { TaskAddComponent } from './components/task-area/task-add/task-add.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [LayoutComponent] 
