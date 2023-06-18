@@ -16,7 +16,7 @@ async function getAllTasks():Promise<TaskModel[]>{
 
 async function addTask( task :TaskModel):Promise<TaskModel>{
     const sql = `
-    INSERT INTO products
+    INSERT INTO tasks
     VALUES (
         DEFAULT,
         ?,
