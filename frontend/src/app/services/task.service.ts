@@ -27,4 +27,10 @@ public async addTask( task : TaskModel): Promise<void> {
   const observable = this.http.post<TaskModel>(appConfig.tasksURL, task)
   const taskAdded =  await firstValueFrom(observable) //this line is a MUST!!!!!! Does NOT work otherwise!
 }
+
+public async deleteItem( taskId :number): Promise<void> {
+  const observable = this.http.delete<void>(appConfig.tasksURL + taskId)
+  const prods =  await firstValueFrom(observable) //this line is a MUST!!!!!! Does NOT work otherwise!
+}
+
 }

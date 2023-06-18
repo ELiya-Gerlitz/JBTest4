@@ -44,12 +44,22 @@ async function addTask( task :TaskModel):Promise<TaskModel>{
     return task
 }
 
+async function deleteOneTask(taskId :number):Promise<void>{
+    const sql = `
+   DELETE FROM tasks 
+   WHERE taskId = ?
+    
+    `
+    const info : OkPacket = await dal.execute(sql, [taskId])
+    //if(info.affectedRows === 0) throw new ErrorModel...
+}
 
 
 
 export default {
     getAllTasks,
     addTask,
-    getAllCustomers
+    getAllCustomers,
+    deleteOneTask
   
 }

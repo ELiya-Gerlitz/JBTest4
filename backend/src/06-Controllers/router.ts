@@ -37,6 +37,16 @@ router.post("/tasks", async( request: Request, response: Response,next: NextFunc
     }
 })
 
+router.delete("/tasks/:taskId", async( request: Request, response: Response,next: NextFunction)=>{
+    try{
+        const taskId = + request.params.taskId
+        await Logic.deleteOneTask(taskId)
+        response.sendStatus(204)
+    }catch(err:any){
+        next(err)
+    }
+})
+
 
 
 

@@ -22,5 +22,16 @@ export class TaskTableComponent implements OnInit{
       }
   }
 
+  public async deleteMe ( taskId :number){
+    if(! window.confirm("are you sure?")) return 
+    this.taskService.deleteItem(taskId)
+    .then(()=> {
+      alert("successfully removed")
+      const index = this.tasks.findIndex(t => t.taskId === taskId)
+      this.tasks.splice(index, 1)
+    })
+    .catch((err: any) => console.log(err))
+  }
+
 
 }
