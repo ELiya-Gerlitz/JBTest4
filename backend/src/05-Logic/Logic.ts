@@ -8,7 +8,18 @@ import TaskModel from "../04-Models/TaskModel"
 async function getAllTasks():Promise<TaskModel[]>{
     // CONCAT(DATE_FORMAT(M.startDate, '%d.%m.%Y') , ' ' ,TIME_FORMAT(M.startDate, '%H:%i')) AS 'startDate',
     const sql = `
-    SELECT * FROM tasks 
+    SELECT T.*, U.name
+    FROM tasks as T LEFT JOIN users as U
+    ON T.customerId = U.userId
+    `
+    const tasks = await dal.execute(sql)
+    return tasks
+}
+
+async function getAllCustomers():Promise<TaskModel[]>{
+    // CONCAT(DATE_FORMAT(M.startDate, '%d.%m.%Y') , ' ' ,TIME_FORMAT(M.startDate, '%H:%i')) AS 'startDate',
+    const sql = `
+    SELECT * FROM users 
     `
     const tasks = await dal.execute(sql)
     return tasks
@@ -96,7 +107,8 @@ async function addTask( task :TaskModel):Promise<TaskModel>{
 
 export default {
     getAllTasks,
-    addTask
+    addTask,
+    getAllCustomers
     // getAllCatergories,
     // getProductsByCategoryId,
     // postOneProduct,

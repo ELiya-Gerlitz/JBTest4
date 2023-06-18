@@ -18,6 +18,15 @@ router.get("/tasks", async( request: Request, response: Response,next: NextFunct
     }
 })
 
+router.get("/customers", async( request: Request, response: Response,next: NextFunction)=>{
+    try{
+        const customers = await Logic.getAllCustomers()
+        response.json(customers)
+    }catch(err:any){
+        next(err)
+    }
+})
+
 router.post("/tasks", async( request: Request, response: Response,next: NextFunction)=>{
     try{
         const taskToAdd = new TaskModel(request.body)
