@@ -1,3 +1,20 @@
 <p>task-add works!</p>
 
+    <div class="box flex">
+        <form name="addForm" (ngSubmit)="send()" ngNativeValidate>
+            <!-- name -->
+            <label for="">Task Description:</label>
+            <input name="name" type="text" [(ngModel)]="task.description" required>&nbsp;
+            <!-- date&time -->
+            <label for="">Date & Time created :</label>
+            <input name="dateTime" type="datetime-local" [(ngModel)]="task.dateCreated" required>&nbsp;
+        
+            <select name="categoryId" [(ngModel)]="task.customerId" required>                <option disabled value="">select a category name </option>
+                    <option *ngFor="let c of customers" value={{c.userId}}>{{c.name}}</option> 
+            </select>
+                <button>send</button>
+            
+        </form>
+</div>
+
 

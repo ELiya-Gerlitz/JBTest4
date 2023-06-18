@@ -1,0 +1,15 @@
+form {
+    width: 300px;
+    border: 1px solid;
+    padding: 10px;
+    text-align: left;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+select, input, button {
+    width: 240px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    
+}
