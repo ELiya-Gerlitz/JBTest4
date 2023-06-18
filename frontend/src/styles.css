@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    text-align: center;
+    background-image: linear-gradient(45deg, lightgreen, white);
+    color: darkcyan;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: rgb(6, 119, 104);
+}
+
+.box {
+    display: inline-block;
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
+}
+
+.err {
+    position: absolute;
+    color: red;
+    margin-left: 20px;
+}
+
+/* .ng-touched.ng-invalid:not(form) { */
+form > .ng-touched.ng-invalid {
+    background-color: pink;
+    border: 2px solid red;
+}
+form {
+    box-sizing: border-box;
+
+}
